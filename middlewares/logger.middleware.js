@@ -1,3 +1,14 @@
+const fs = require('fs');
+
+// If filePath "./log" doesn't exist, create it
+if (!fs.existsSync('./log')) {
+    fs.mkdirSync('./log');
+}
+// If filePath "./log/access" doesn't exist, create it
+if (!fs.existsSync('./log/access')) {
+    fs.mkdirSync('./log/access');
+}
+
 const accessLog = require("simple-node-logger").createSimpleLogger({
     logFilePath:
         "./log/access/" +
